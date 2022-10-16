@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -110,6 +111,262 @@
             </objects>
             <point key="canvasLocation" x="939.13043478260875" y="65.625"/>
         </scene>
+        <!--Second View Controller-->
+        <scene sceneID="gRR-2F-luJ">
+            <objects>
+                <viewController storyboardIdentifier="secondView" id="21O-8M-1TL" customClass="SecondViewController" customModule="As_k_So_zleri" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="m31-AL-hWl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cdX-Ld-l5x">
+                                <rect key="frame" x="10" y="54" width="394" height="90"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Isw-31-39V">
+                                        <rect key="frame" x="10" y="10" width="374" height="70"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAD-RX-w9b">
+                                                <rect key="frame" x="0.0" y="0.0" width="81.5" height="70"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" red="0.55686277149999996" green="0.1607843041" blue="0.14509806040000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" imagePlacement="top" title="Paylaş" cornerStyle="large">
+                                                    <imageReference key="image" image="shareplay" catalog="system" symbolScale="large" renderingMode="hierarchical">
+                                                        <hierarchicalColors>
+                                                            <color red="0.55686277149999996" green="0.1607843041" blue="0.14509806040000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <color red="0.55686277149999996" green="0.1607843041" blue="0.14509806040000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <color systemColor="tertiaryLabelColor"/>
+                                                        </hierarchicalColors>
+                                                    </imageReference>
+                                                    <backgroundConfiguration key="background">
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="strokeColor" red="0.55686277149999996" green="0.1607843041" blue="0.14509806040000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </backgroundConfiguration>
+                                                    <fontDescription key="titleFontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="12"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="shareButtonTapped:" destination="21O-8M-1TL" eventType="touchUpInside" id="lYg-Wp-bin"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8of-fF-bre">
+                                                <rect key="frame" x="97.5" y="0.0" width="81.5" height="70"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" red="0.55686277149999996" green="0.1607843041" blue="0.14509806040000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" imagePlacement="top" title="Kopyala" cornerStyle="large">
+                                                    <imageReference key="image" image="newspaper" catalog="system" symbolScale="large" renderingMode="hierarchical">
+                                                        <hierarchicalColors>
+                                                            <color red="0.55686277149999996" green="0.1607843041" blue="0.14509806040000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <color red="0.55686277149999996" green="0.1607843041" blue="0.14509806040000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <color systemColor="tertiaryLabelColor"/>
+                                                        </hierarchicalColors>
+                                                    </imageReference>
+                                                    <backgroundConfiguration key="background">
+                                                        <color key="strokeColor" red="0.55686277149999996" green="0.1607843041" blue="0.14509806040000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </backgroundConfiguration>
+                                                    <fontDescription key="titleFontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="12"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="copyButtonTapped:" destination="21O-8M-1TL" eventType="touchUpInside" id="Kny-J0-iSR"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cug-pd-vci">
+                                                <rect key="frame" x="195" y="0.0" width="81.5" height="70"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" red="0.55686277149999996" green="0.1607843041" blue="0.14509806040000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" imagePlacement="top" title="Rastgele" cornerStyle="large">
+                                                    <imageReference key="image" image="pencil.and.outline" catalog="system" symbolScale="large" renderingMode="hierarchical">
+                                                        <hierarchicalColors>
+                                                            <color red="0.55686277149999996" green="0.1607843041" blue="0.14509806040000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <color red="0.55686277149999996" green="0.1607843041" blue="0.14509806040000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <color systemColor="tertiaryLabelColor"/>
+                                                        </hierarchicalColors>
+                                                    </imageReference>
+                                                    <backgroundConfiguration key="background">
+                                                        <color key="strokeColor" red="0.55686277149999996" green="0.1607843041" blue="0.14509806040000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </backgroundConfiguration>
+                                                    <fontDescription key="titleFontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="12"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="randomButtonTapped:" destination="21O-8M-1TL" eventType="touchUpInside" id="Cx2-lK-fOG"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Frq-s1-RpV">
+                                                <rect key="frame" x="292.5" y="0.0" width="81.5" height="70"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" red="0.55686277149999996" green="0.1607843041" blue="0.14509806040000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" imagePlacement="top" title="Favori" cornerStyle="large">
+                                                    <imageReference key="image" image="heart.fill" catalog="system" symbolScale="large" renderingMode="hierarchical">
+                                                        <hierarchicalColors>
+                                                            <color red="0.55686277149999996" green="0.1607843041" blue="0.14509806040000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <color red="0.55686277149999996" green="0.1607843041" blue="0.14509806040000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <color systemColor="tertiaryLabelColor"/>
+                                                        </hierarchicalColors>
+                                                    </imageReference>
+                                                    <backgroundConfiguration key="background">
+                                                        <color key="strokeColor" red="0.55686277149999996" green="0.1607843041" blue="0.14509806040000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </backgroundConfiguration>
+                                                    <fontDescription key="titleFontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="12"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="favButtonTapped:" destination="21O-8M-1TL" eventType="touchUpInside" id="7UB-Ch-URO"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="rU5-pr-Sgf"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Isw-31-39V" secondAttribute="trailing" constant="10" id="38q-Zu-T1u"/>
+                                    <constraint firstAttribute="bottom" secondItem="Isw-31-39V" secondAttribute="bottom" constant="10" id="8Hp-js-5BR"/>
+                                    <constraint firstAttribute="height" constant="90" id="Jaq-FE-XLu"/>
+                                    <constraint firstItem="Isw-31-39V" firstAttribute="top" secondItem="cdX-Ld-l5x" secondAttribute="top" constant="10" id="dIz-0a-XUc"/>
+                                    <constraint firstItem="Isw-31-39V" firstAttribute="leading" secondItem="cdX-Ld-l5x" secondAttribute="leading" constant="10" id="lFB-GU-W1H"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fAe-qg-QtT">
+                                <rect key="frame" x="10" y="762" width="394" height="90"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xAZ-Zi-AsV">
+                                        <rect key="frame" x="167" y="30" width="60" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="hBi-xj-oFF"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fS9-I5-hl3">
+                                        <rect key="frame" x="10" y="10" width="79" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="79" id="06B-hi-a9F"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" imagePlacement="top" title="Önceki" cornerStyle="large">
+                                            <imageReference key="image" image="arrowshape.turn.up.backward.fill" catalog="system" renderingMode="hierarchical">
+                                                <hierarchicalColors>
+                                                    <color red="0.55686277149999996" green="0.1607843041" blue="0.14509806040000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color systemColor="secondaryLabelColor"/>
+                                                    <color systemColor="tertiaryLabelColor"/>
+                                                </hierarchicalColors>
+                                            </imageReference>
+                                            <backgroundConfiguration key="background">
+                                                <color key="strokeColor" red="0.55686277149999996" green="0.1607843041" blue="0.14509806040000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="12"/>
+                                            <color key="baseForegroundColor" red="0.55686277149999996" green="0.1607843041" blue="0.14509806040000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="backButtonTapped:" destination="21O-8M-1TL" eventType="touchUpInside" id="0pM-VE-AXb"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p1d-qc-muH">
+                                        <rect key="frame" x="305" y="10" width="79" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="79" id="omB-Xp-alt"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" imagePlacement="top" title="Sonraki" cornerStyle="large">
+                                            <imageReference key="image" image="arrowshape.turn.up.forward.fill" catalog="system" renderingMode="hierarchical">
+                                                <hierarchicalColors>
+                                                    <color red="0.55686277149999996" green="0.1607843041" blue="0.14509806040000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color systemColor="secondaryLabelColor"/>
+                                                    <color systemColor="tertiaryLabelColor"/>
+                                                </hierarchicalColors>
+                                            </imageReference>
+                                            <backgroundConfiguration key="background">
+                                                <color key="strokeColor" red="0.55686277149999996" green="0.1607843041" blue="0.14509806040000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="12"/>
+                                            <color key="baseForegroundColor" red="0.55686277149999996" green="0.1607843041" blue="0.14509806040000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="forwardButtonTapped:" destination="21O-8M-1TL" eventType="touchUpInside" id="ZA9-th-A6Y"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="fS9-I5-hl3" firstAttribute="top" secondItem="fAe-qg-QtT" secondAttribute="top" constant="10" id="4gH-XP-ZuC"/>
+                                    <constraint firstAttribute="bottom" secondItem="fS9-I5-hl3" secondAttribute="bottom" constant="10" id="51G-L9-1At"/>
+                                    <constraint firstAttribute="bottom" secondItem="p1d-qc-muH" secondAttribute="bottom" constant="10" id="UrY-up-edM"/>
+                                    <constraint firstAttribute="height" constant="90" id="cSu-BX-RDc"/>
+                                    <constraint firstItem="xAZ-Zi-AsV" firstAttribute="centerX" secondItem="fAe-qg-QtT" secondAttribute="centerX" id="dRf-Tl-GU0"/>
+                                    <constraint firstItem="fS9-I5-hl3" firstAttribute="leading" secondItem="fAe-qg-QtT" secondAttribute="leading" constant="10" id="ndJ-bQ-lFV"/>
+                                    <constraint firstAttribute="bottom" secondItem="xAZ-Zi-AsV" secondAttribute="bottom" constant="30" id="pqb-rF-exR"/>
+                                    <constraint firstAttribute="trailing" secondItem="p1d-qc-muH" secondAttribute="trailing" constant="10" id="qhb-1o-aT4"/>
+                                    <constraint firstItem="p1d-qc-muH" firstAttribute="top" secondItem="fAe-qg-QtT" secondAttribute="top" constant="10" id="v69-2s-cJv"/>
+                                    <constraint firstItem="xAZ-Zi-AsV" firstAttribute="top" secondItem="fAe-qg-QtT" secondAttribute="top" constant="30" id="wYp-r6-brr"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTN-RN-D49">
+                                <rect key="frame" x="50" y="608" width="314" height="0.0"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9W7-sx-FMX">
+                                <rect key="frame" x="10" y="323" width="394" height="250"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bubble" translatesAutoresizingMaskIntoConstraints="NO" id="q2Z-GY-BTx">
+                                        <rect key="frame" x="9" y="9" width="376" height="232"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8s5-6s-5Lz">
+                                        <rect key="frame" x="40" y="1" width="314" height="248"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="q2Z-GY-BTx" firstAttribute="top" secondItem="9W7-sx-FMX" secondAttribute="topMargin" constant="1" id="6Zs-sc-nCa"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="q2Z-GY-BTx" secondAttribute="bottom" constant="1" id="Hfd-NV-jIf"/>
+                                    <constraint firstAttribute="trailing" secondItem="8s5-6s-5Lz" secondAttribute="trailing" constant="40" id="MKu-J2-3qz"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="q2Z-GY-BTx" secondAttribute="trailing" constant="1" id="Xwh-g0-3LI"/>
+                                    <constraint firstAttribute="bottom" secondItem="8s5-6s-5Lz" secondAttribute="bottom" constant="1" id="ftS-BF-krk"/>
+                                    <constraint firstAttribute="height" constant="250" id="gfG-OD-xke"/>
+                                    <constraint firstItem="8s5-6s-5Lz" firstAttribute="leading" secondItem="9W7-sx-FMX" secondAttribute="leading" constant="40" id="n0a-ka-Bkt"/>
+                                    <constraint firstItem="8s5-6s-5Lz" firstAttribute="top" secondItem="9W7-sx-FMX" secondAttribute="top" constant="1" id="zmK-jC-ztR"/>
+                                    <constraint firstItem="q2Z-GY-BTx" firstAttribute="leading" secondItem="9W7-sx-FMX" secondAttribute="leadingMargin" constant="1" id="zyH-eY-3Qf"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="rHy-bn-Tyb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fAe-qg-QtT" firstAttribute="leading" secondItem="rHy-bn-Tyb" secondAttribute="leading" constant="10" id="0Uf-WK-kKG"/>
+                            <constraint firstItem="cdX-Ld-l5x" firstAttribute="leading" secondItem="rHy-bn-Tyb" secondAttribute="leading" constant="10" id="1u4-W4-mJQ"/>
+                            <constraint firstItem="uTN-RN-D49" firstAttribute="top" secondItem="9W7-sx-FMX" secondAttribute="bottom" constant="35" id="4mg-cK-2lk"/>
+                            <constraint firstItem="rHy-bn-Tyb" firstAttribute="bottom" secondItem="fAe-qg-QtT" secondAttribute="bottom" constant="10" id="7dF-lA-eVo"/>
+                            <constraint firstItem="9W7-sx-FMX" firstAttribute="centerY" secondItem="m31-AL-hWl" secondAttribute="centerY" id="IiZ-ZF-LPh"/>
+                            <constraint firstItem="uTN-RN-D49" firstAttribute="leading" secondItem="rHy-bn-Tyb" secondAttribute="leading" constant="50" id="JCt-zJ-lAr"/>
+                            <constraint firstItem="rHy-bn-Tyb" firstAttribute="trailing" secondItem="cdX-Ld-l5x" secondAttribute="trailing" constant="10" id="PBL-bV-OrS"/>
+                            <constraint firstItem="9W7-sx-FMX" firstAttribute="centerX" secondItem="m31-AL-hWl" secondAttribute="centerX" id="Spf-pf-s0X"/>
+                            <constraint firstItem="cdX-Ld-l5x" firstAttribute="top" secondItem="rHy-bn-Tyb" secondAttribute="top" constant="10" id="XYk-kS-hDo"/>
+                            <constraint firstItem="rHy-bn-Tyb" firstAttribute="trailing" secondItem="uTN-RN-D49" secondAttribute="trailing" constant="50" id="Y6t-qY-2B7"/>
+                            <constraint firstItem="rHy-bn-Tyb" firstAttribute="trailing" secondItem="9W7-sx-FMX" secondAttribute="trailing" constant="10" id="eFU-5n-z5L"/>
+                            <constraint firstItem="uTN-RN-D49" firstAttribute="centerX" secondItem="m31-AL-hWl" secondAttribute="centerX" id="iAY-bH-6JW"/>
+                            <constraint firstItem="9W7-sx-FMX" firstAttribute="leading" secondItem="rHy-bn-Tyb" secondAttribute="leading" constant="10" id="jcV-dS-GL2"/>
+                            <constraint firstItem="rHy-bn-Tyb" firstAttribute="trailing" secondItem="fAe-qg-QtT" secondAttribute="trailing" constant="10" id="m4H-cp-TxR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="isFavData" destination="uTN-RN-D49" id="wRS-nP-I76"/>
+                        <outlet property="mainData" destination="8s5-6s-5Lz" id="wgG-t3-weF"/>
+                        <outlet property="mainDataCount" destination="xAZ-Zi-AsV" id="s35-Qf-8Br"/>
+                        <outlet property="secondDownView" destination="fAe-qg-QtT" id="hZe-rO-VWn"/>
+                        <outlet property="secondUpView" destination="cdX-Ld-l5x" id="fHg-mn-OID"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bKh-Hc-nLo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1728.985507246377" y="65.625"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="qjI-lb-t5w">
             <objects>
@@ -145,10 +402,23 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrowshape.turn.up.backward.fill" catalog="system" width="128" height="106"/>
+        <image name="arrowshape.turn.up.forward.fill" catalog="system" width="128" height="106"/>
+        <image name="bubble" width="719" height="399"/>
         <image name="fav" width="456" height="129"/>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
+        <image name="newspaper" catalog="system" width="128" height="111"/>
+        <image name="pencil.and.outline" catalog="system" width="128" height="128"/>
+        <image name="shareplay" catalog="system" width="128" height="73"/>
         <image name="sign2" width="80" height="80"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

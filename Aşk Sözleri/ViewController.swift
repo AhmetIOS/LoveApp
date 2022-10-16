@@ -7,11 +7,14 @@
 
 import UIKit
 
+
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var words = ["AŞK SÖZLERİ", "ANLAMLI SÖZLER","ACI SÖZLER", "AŞK SÖZLERİ", "ANLAMLI SÖZLER","ACI SÖZLER", "AŞK SÖZLERİ", "ANLAMLI SÖZLER","ACI SÖZLER","AŞK SÖZLERİ", "ANLAMLI SÖZLER","ACI SÖZLER","AŞK SÖZLERİ", "ANLAMLI SÖZLER","ACI SÖZLER"]
+   
+    var words = ["AŞK SÖZLERİ", "TATLI SÖZLER","ACI SÖZLER", "AŞK SÖZLERİ", "TATLI SÖZLER","ACI SÖZLER", "AŞK SÖZLERİ", "TATLI SÖZLER","ACI SÖZLER", "AŞK SÖZLERİ", "TATLI SÖZLER","ACI SÖZLER"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +36,7 @@ class ViewController: UIViewController {
                             style: .done,
                             target: self,
                             action: nil),
-            UIBarButtonItem(image: UIImage(systemName: "gear"),
+            UIBarButtonItem(image: UIImage(systemName: "gearshape.2.fill"),
                             style: .done,
                             target: self,
                             action: nil)
@@ -41,7 +44,15 @@ class ViewController: UIViewController {
     }
 
     @IBAction func favButtonTapped(_ sender: UIButton) {
-        print("fav")
+        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "secondView") as! SecondViewController
+        
+        let backItem = UIBarButtonItem()
+            backItem.title = "Geri"
+            navigationItem.backBarButtonItem = backItem
+        
+        vc.title = "FAVORİLER"
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }
@@ -53,6 +64,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "bubbleCell") as! MainTableViewCell
+        
+        let bgColorView = UIView()
+        bgColorView.backgroundColor = UIColor.white
+        cell.selectedBackgroundView = bgColorView
         
         cell.mainLabel.text = words[indexPath.row]
         cell.mainView.layer.shadowOffset = CGSize(width: -1, height: 1)
@@ -67,6 +82,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("a")
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "secondView") as! SecondViewController
+        
+        let backItem = UIBarButtonItem()
+            backItem.title = "Geri"
+            navigationItem.backBarButtonItem = backItem
+        
+        vc.title = words[indexPath.row]
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     
