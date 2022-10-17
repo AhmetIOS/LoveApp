@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseFirestore
+import GoogleMobileAds
 
 struct Message {
     let data: String
@@ -14,8 +15,20 @@ struct Message {
     let category: String
     let id: Int
 }
-class SecondViewController: UIViewController {
+class SecondViewController: UIViewController, GADFullScreenContentDelegate {
 
+    private var interstitial: GADInterstitialAd?
+    private let request = GADRequest()
+    
+    private let banner: GADBannerView = {
+        let banner = GADBannerView()
+        //banner.adUnitID = "ca-app-pub-6480988528718917/6685959829"
+        banner.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        banner.load(GADRequest())
+        banner.backgroundColor = .secondarySystemBackground
+        return banner
+    }()
+    
     @IBOutlet weak var isFavData: UILabel!
     @IBOutlet weak var secondUpView: UIView!
     @IBOutlet weak var secondDownView: UIView!
@@ -34,6 +47,10 @@ class SecondViewController: UIViewController {
         shadowView(name: secondUpView)
         shadowView(name: secondDownView)
         
+        banner.rootViewController = self
+        view.addSubview(banner)
+        
+      
         
         guard let title = navigationItem.title else {
             return
@@ -46,12 +63,38 @@ class SecondViewController: UIViewController {
             loadData(name: title)
             dataNumber(name: title)
         }
+      
+    }
+    
+    private func admobFullScreen() {
         
-            
+            GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3940256099942544/4411468910",
+                                        request: request,
+                              completionHandler: { [self] ad, error in
+                                if let error = error {
+                                  print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+                                  return
+                                }
+                                interstitial = ad
+                interstitial?.fullScreenContentDelegate = self
+                                
+                              }
+            )
         
-        
-        
-            
+        if interstitial != nil {
+            interstitial?.present(fromRootViewController: self)
+          } else {
+            print("Ad wasn't ready")
+          }
+
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        let statusBarSize = UIApplication.shared.statusBarFrame.size
+        let statusBarHeight = statusBarSize.height
+        banner.frame = CGRect(x: 0, y: 44+statusBarHeight+2, width: view.frame.size.width, height: 50)
+        banner.translatesAutoresizingMaskIntoConstraints = true
     }
     
     private func dataNumber(name : String) {
@@ -93,7 +136,7 @@ class SecondViewController: UIViewController {
     public func query(name: String) {
         print("favoriler")
         self.messages = []
-        var words = ["AŞK SÖZLERİ", "TATLI SÖZLER","ACI SÖZLER"]
+        let words = ["AŞK SÖZLERİ", "TATLI SÖZLER","ACI SÖZLER"]
         for item in words {
             db.collection(item).whereField("isFav", isEqualTo: true)
                 .getDocuments() { (querySnapshot, err) in
@@ -294,6 +337,9 @@ class SecondViewController: UIViewController {
         } else {
             loadData(name: title)
         }
+        if ( number % 5 == 0) {
+            admobFullScreen()
+        }
        
     }
     
@@ -316,8 +362,14 @@ class SecondViewController: UIViewController {
         } else {
             loadData(name: title)
         }
+        if ( number % 5 == 0) {
+           admobFullScreen()
+        }
+        
 
     }
+    
+   
     
      //to load data first time
 //    private func sendData() {

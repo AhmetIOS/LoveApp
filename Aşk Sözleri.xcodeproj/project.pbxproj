@@ -25,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		84D8F2AE66EB229889E31256 /* Pods-Aşk Sözleri.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aşk Sözleri.release.xcconfig"; path = "Target Support Files/Pods-Aşk Sözleri/Pods-Aşk Sözleri.release.xcconfig"; sourceTree = "<group>"; };
+		85757B94A23DA1B80C78A217 /* Pods_As_k_So_zleri.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_As_k_So_zleri.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B42E5E6528F99750001FCCFA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B4B6864028F919CD0073F35F /* Aşk Sözleri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Aşk Sözleri.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4B6864328F919CD0073F35F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +38,7 @@
 		B4B6865128F919CF0073F35F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4B6865728F91DF30073F35F /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		B4B6865928F927FF0073F35F /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		D9011E87EF37DEBE40C6F9EE /* Pods-Aşk Sözleri.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aşk Sözleri.debug.xcconfig"; path = "Target Support Files/Pods-Aşk Sözleri/Pods-Aşk Sözleri.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +63,8 @@
 			children = (
 				B4B6864228F919CD0073F35F /* Aşk Sözleri */,
 				B4B6864128F919CD0073F35F /* Products */,
+				C30BE95CD03C9D790884D05E /* Pods */,
+				D03B15BA44367C93D5CDB561 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,15 +82,32 @@
 				B4B6864328F919CD0073F35F /* AppDelegate.swift */,
 				B4B6864528F919CD0073F35F /* SceneDelegate.swift */,
 				B4B6864728F919CD0073F35F /* ViewController.swift */,
+				B4B6865928F927FF0073F35F /* SecondViewController.swift */,
 				B4B6864928F919CD0073F35F /* Main.storyboard */,
 				B4B6864C28F919CF0073F35F /* Assets.xcassets */,
 				B4B6864E28F919CF0073F35F /* LaunchScreen.storyboard */,
 				B4B6865128F919CF0073F35F /* Info.plist */,
 				B42E5E6528F99750001FCCFA /* GoogleService-Info.plist */,
 				B4B6865728F91DF30073F35F /* MainTableViewCell.swift */,
-				B4B6865928F927FF0073F35F /* SecondViewController.swift */,
 			);
 			path = "Aşk Sözleri";
+			sourceTree = "<group>";
+		};
+		C30BE95CD03C9D790884D05E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D9011E87EF37DEBE40C6F9EE /* Pods-Aşk Sözleri.debug.xcconfig */,
+				84D8F2AE66EB229889E31256 /* Pods-Aşk Sözleri.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D03B15BA44367C93D5CDB561 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				85757B94A23DA1B80C78A217 /* Pods_As_k_So_zleri.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,9 +117,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B4B6865428F919CF0073F35F /* Build configuration list for PBXNativeTarget "Aşk Sözleri" */;
 			buildPhases = (
+				097A73DF9671B653FA31E23B /* [CP] Check Pods Manifest.lock */,
 				B4B6863C28F919CD0073F35F /* Sources */,
 				B4B6863D28F919CD0073F35F /* Frameworks */,
 				B4B6863E28F919CD0073F35F /* Resources */,
+				C988EC1B6FE4ED02C8889A4C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -165,6 +189,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		097A73DF9671B653FA31E23B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Aşk Sözleri-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C988EC1B6FE4ED02C8889A4C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Aşk Sözleri/Pods-Aşk Sözleri-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Aşk Sözleri/Pods-Aşk Sözleri-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Aşk Sözleri/Pods-Aşk Sözleri-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B4B6863C28F919CD0073F35F /* Sources */ = {
@@ -317,6 +383,7 @@
 		};
 		B4B6865528F919CF0073F35F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9011E87EF37DEBE40C6F9EE /* Pods-Aşk Sözleri.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -345,6 +412,7 @@
 		};
 		B4B6865628F919CF0073F35F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84D8F2AE66EB229889E31256 /* Pods-Aşk Sözleri.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

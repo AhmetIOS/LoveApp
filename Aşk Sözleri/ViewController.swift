@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 
 
@@ -13,11 +14,36 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-   
     var words = ["AŞK SÖZLERİ", "TATLI SÖZLER","ACI SÖZLER", "AŞK SÖZLERİ", "TATLI SÖZLER","ACI SÖZLER", "AŞK SÖZLERİ", "TATLI SÖZLER","ACI SÖZLER", "AŞK SÖZLERİ", "TATLI SÖZLER","ACI SÖZLER"]
+    
+    private var interstitial: GADInterstitialAd?
+    
+    private let banner: GADBannerView = {
+        let banner = GADBannerView()
+        //banner.adUnitID = "ca-app-pub-6480988528718917/6685959829"
+        banner.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        banner.load(GADRequest())
+        banner.backgroundColor = .secondarySystemBackground
+        return banner
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        banner.rootViewController = self
+        view.addSubview(banner)
+        
+        let request = GADRequest()
+            GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3940256099942544/4411468910",
+                                        request: request,
+                              completionHandler: { [self] ad, error in
+                                if let error = error {
+                                  print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+                                  return
+                                }
+                                interstitial = ad
+                              }
+            )
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -28,18 +54,27 @@ class ViewController: UIViewController {
         title = "Aşk Sözleri"
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+       
+        let statusBarSize = UIApplication.shared.statusBarFrame.size
+        let statusBarHeight = statusBarSize.height
+        banner.frame = CGRect(x: 0, y: 44+statusBarHeight+2, width: view.frame.size.width, height: 50)
+        banner.translatesAutoresizingMaskIntoConstraints = true
+    }
+    
     private func configureItems () {
        
-        print("b")
+        
         navigationItem.rightBarButtonItems = [
             UIBarButtonItem(image: UIImage(systemName: "star.fill"),
                             style: .done,
                             target: self,
                             action: nil),
-            UIBarButtonItem(image: UIImage(systemName: "gearshape.2.fill"),
-                            style: .done,
-                            target: self,
-                            action: nil)
+//            UIBarButtonItem(image: UIImage(systemName: "gearshape.2.fill"),
+//                            style: .done,
+//                            target: self,
+//                            action: nil)
         ]
     }
 
