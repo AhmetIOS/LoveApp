@@ -7,16 +7,20 @@
 
 import UIKit
 import GoogleMobileAds
+import StoreKit
 
 
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, GADFullScreenContentDelegate {
 
+    private var interstitial: GADInterstitialAd?
+    private let request = GADRequest()
+    
     @IBOutlet weak var tableView: UITableView!
     
-    var words = ["AŞK SÖZLERİ", "TATLI SÖZLER","ACI SÖZLER", "AŞK SÖZLERİ", "TATLI SÖZLER","ACI SÖZLER", "AŞK SÖZLERİ", "TATLI SÖZLER","ACI SÖZLER", "AŞK SÖZLERİ", "TATLI SÖZLER","ACI SÖZLER"]
+    var words = ["AŞK SÖZLERİ", "TATLI SÖZLER","ACI SÖZLER", "EFSANE SÖZLER", "ÖZÜR SÖZLERİ","ROMANTİK SÖZLER", "TEŞEKKÜR SÖZLERİ", "AŞK SÖZLERİ", "TATLI SÖZLER","ACI SÖZLER", "EFSANE SÖZLER", "ÖZÜR SÖZLERİ","ROMANTİK SÖZLER", "TEŞEKKÜR SÖZLERİ"]
     
-    private var interstitial: GADInterstitialAd?
+//   var number = 1
     
     private let banner: GADBannerView = {
         let banner = GADBannerView()
@@ -50,9 +54,11 @@ class ViewController: UIViewController {
         tableView.separatorStyle = .none
         tableView.showsVerticalScrollIndicator = false
         configureItems()
-        
+
         title = "Aşk Sözleri"
     }
+    
+
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -63,6 +69,51 @@ class ViewController: UIViewController {
         banner.translatesAutoresizingMaskIntoConstraints = true
     }
     
+    @objc func rateApp() {
+
+        if #available(iOS 10.3, *) {
+
+            SKStoreReviewController.requestReview()
+        
+        } else {
+
+            let appID = "1137397744"
+            let urlStr = "https://itunes.apple.com/app/id\(appID)" // (Option 1) Open App Page
+            //let urlStr = "https://itunes.apple.com/app/id\(appID)?action=write-review" // (Option 2) Open App Review Page
+            
+            guard let url = URL(string: urlStr), UIApplication.shared.canOpenURL(url) else { return }
+            
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            } else {
+                UIApplication.shared.openURL(url) // openURL(_:) is deprecated from iOS 10.
+            }
+        }
+    }
+    
+    private func admobFullScreen() {
+        
+            GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3940256099942544/4411468910",
+                                        request: request,
+                              completionHandler: { [self] ad, error in
+                                if let error = error {
+                                  print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+                                  return
+                                }
+                                interstitial = ad
+                interstitial?.fullScreenContentDelegate = self
+                                
+                              }
+            )
+        
+        if interstitial != nil {
+            interstitial?.present(fromRootViewController: self)
+          } else {
+            print("Ad wasn't ready")
+          }
+
+    }
+    
     private func configureItems () {
        
         
@@ -70,7 +121,7 @@ class ViewController: UIViewController {
             UIBarButtonItem(image: UIImage(systemName: "star.fill"),
                             style: .done,
                             target: self,
-                            action: nil),
+                            action: #selector(rateApp)),
 //            UIBarButtonItem(image: UIImage(systemName: "gearshape.2.fill"),
 //                            style: .done,
 //                            target: self,
@@ -88,6 +139,16 @@ class ViewController: UIViewController {
         
         vc.title = "FAVORİLER"
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    private func adMobActivate() {
+        
+        let adNumber = UserDefaults.standard.value(forKey: "adNumber") as? Int ?? 0
+        UserDefaults.standard.set((adNumber+1), forKey: "adNumber")
+        if ( adNumber % 5 == 0) {
+            admobFullScreen()
+        }
+        print(adNumber)
     }
     
 }
@@ -124,7 +185,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             navigationItem.backBarButtonItem = backItem
         
         vc.title = words[indexPath.row]
+        
+        adMobActivate()
+       
         self.navigationController?.pushViewController(vc, animated: true)
+        
     }
     
     

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B42325D028FEF09200E99FCB /* FavDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B42325CE28FEF09100E99FCB /* FavDataModel.xcdatamodeld */; };
+		B42325D928FEF2CB00E99FCB /* FavItems+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42325D728FEF2CB00E99FCB /* FavItems+CoreDataProperties.swift */; };
+		B42325DA28FEF2CB00E99FCB /* FavItems+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42325D828FEF2CB00E99FCB /* FavItems+CoreDataClass.swift */; };
 		B42E5E6628F99750001FCCFA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B42E5E6528F99750001FCCFA /* GoogleService-Info.plist */; };
 		B42E5E6928F99888001FCCFA /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = B42E5E6828F99888001FCCFA /* FirebaseAnalytics */; };
 		B42E5E6B28F99888001FCCFA /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = B42E5E6A28F99888001FCCFA /* FirebaseCrashlytics */; };
@@ -27,6 +30,9 @@
 /* Begin PBXFileReference section */
 		84D8F2AE66EB229889E31256 /* Pods-Aşk Sözleri.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aşk Sözleri.release.xcconfig"; path = "Target Support Files/Pods-Aşk Sözleri/Pods-Aşk Sözleri.release.xcconfig"; sourceTree = "<group>"; };
 		85757B94A23DA1B80C78A217 /* Pods_As_k_So_zleri.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_As_k_So_zleri.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B42325CF28FEF09200E99FCB /* FavDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavDataModel.xcdatamodel; sourceTree = "<group>"; };
+		B42325D728FEF2CB00E99FCB /* FavItems+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "FavItems+CoreDataProperties.swift"; path = "/Users/selimazra/Desktop/new-apps/Aşk Sözleri/Aşk Sözleri/FavItems+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		B42325D828FEF2CB00E99FCB /* FavItems+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "FavItems+CoreDataClass.swift"; path = "/Users/selimazra/Desktop/new-apps/Aşk Sözleri/Aşk Sözleri/FavItems+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		B42E5E6528F99750001FCCFA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B4B6864028F919CD0073F35F /* Aşk Sözleri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Aşk Sözleri.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4B6864328F919CD0073F35F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +86,9 @@
 			isa = PBXGroup;
 			children = (
 				B4B6864328F919CD0073F35F /* AppDelegate.swift */,
+				B42325D828FEF2CB00E99FCB /* FavItems+CoreDataClass.swift */,
+				B42325D728FEF2CB00E99FCB /* FavItems+CoreDataProperties.swift */,
+				B42325CE28FEF09100E99FCB /* FavDataModel.xcdatamodeld */,
 				B4B6864528F919CD0073F35F /* SceneDelegate.swift */,
 				B4B6864728F919CD0073F35F /* ViewController.swift */,
 				B4B6865928F927FF0073F35F /* SecondViewController.swift */,
@@ -239,7 +248,10 @@
 			files = (
 				B4B6864828F919CD0073F35F /* ViewController.swift in Sources */,
 				B4B6864428F919CD0073F35F /* AppDelegate.swift in Sources */,
+				B42325DA28FEF2CB00E99FCB /* FavItems+CoreDataClass.swift in Sources */,
+				B42325D928FEF2CB00E99FCB /* FavItems+CoreDataProperties.swift in Sources */,
 				B4B6865828F91DF30073F35F /* MainTableViewCell.swift in Sources */,
+				B42325D028FEF09200E99FCB /* FavDataModel.xcdatamodeld in Sources */,
 				B4B6865A28F928000073F35F /* SecondViewController.swift in Sources */,
 				B4B6864628F919CD0073F35F /* SceneDelegate.swift in Sources */,
 			);
@@ -505,6 +517,19 @@
 			productName = FirebaseFirestoreSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		B42325CE28FEF09100E99FCB /* FavDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B42325CF28FEF09200E99FCB /* FavDataModel.xcdatamodel */,
+			);
+			currentVersion = B42325CF28FEF09200E99FCB /* FavDataModel.xcdatamodel */;
+			path = FavDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B4B6863828F919CD0073F35F /* Project object */;
 }
