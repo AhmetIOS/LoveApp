@@ -112,8 +112,8 @@ class SecondViewController: UIViewController, GADFullScreenContentDelegate {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        let statusBarSize = UIApplication.shared.statusBarFrame.size
-        let statusBarHeight = statusBarSize.height
+       
+        let statusBarHeight = view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
         banner.frame = CGRect(x: 0, y: 44+statusBarHeight+2, width: view.frame.size.width, height: 50)
         banner.translatesAutoresizingMaskIntoConstraints = true
     }

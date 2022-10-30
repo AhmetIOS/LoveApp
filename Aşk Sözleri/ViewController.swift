@@ -24,7 +24,7 @@ class ViewController: UIViewController, GADFullScreenContentDelegate {
     
     private let banner: GADBannerView = {
         let banner = GADBannerView()
-        //banner.adUnitID = "ca-app-pub-6480988528718917/6685959829"
+        //banner.adUnitID = "ca-app-pub-6480988528718917/6685959829"dasd
         banner.adUnitID = "ca-app-pub-3940256099942544/2934735716"
         banner.load(GADRequest())
         banner.backgroundColor = .secondarySystemBackground
@@ -63,8 +63,7 @@ class ViewController: UIViewController, GADFullScreenContentDelegate {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
        
-        let statusBarSize = UIApplication.shared.statusBarFrame.size
-        let statusBarHeight = statusBarSize.height
+        let statusBarHeight = view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
         banner.frame = CGRect(x: 0, y: 44+statusBarHeight+2, width: view.frame.size.width, height: 50)
         banner.translatesAutoresizingMaskIntoConstraints = true
     }
@@ -72,8 +71,14 @@ class ViewController: UIViewController, GADFullScreenContentDelegate {
     @objc func rateApp() {
 
         if #available(iOS 10.3, *) {
-
-            SKStoreReviewController.requestReview()
+                
+            if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
+                DispatchQueue.main.async {
+                    SKStoreReviewController.requestReview(in: scene)
+                }
+            }
+            
+            
         
         } else {
 
@@ -83,11 +88,9 @@ class ViewController: UIViewController, GADFullScreenContentDelegate {
             
             guard let url = URL(string: urlStr), UIApplication.shared.canOpenURL(url) else { return }
             
-            if #available(iOS 10.0, *) {
+
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            } else {
-                UIApplication.shared.openURL(url) // openURL(_:) is deprecated from iOS 10.
-            }
+
         }
     }
     
