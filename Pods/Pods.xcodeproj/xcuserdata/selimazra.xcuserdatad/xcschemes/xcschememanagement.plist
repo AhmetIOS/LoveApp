@@ -39,12 +39,17 @@
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
+		<key>Pods-Aşk Sözleri.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
 		<key>PromisesObjC.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>6</integer>
+			<integer>5</integer>
 		</dict>
 		<key>nanopb.xcscheme</key>
 		<dict>
