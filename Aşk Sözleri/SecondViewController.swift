@@ -72,7 +72,7 @@ class SecondViewController: UIViewController, GADFullScreenContentDelegate {
         if title == "FAVORİLER" {
             dataNumber(name: title)
             if dataCount != 0 {
-                mainDataCount.text = "\(number) / \(dataCount)"
+                
                 getAllItems(order: number)
             } else {
                
@@ -130,12 +130,14 @@ class SecondViewController: UIViewController, GADFullScreenContentDelegate {
            getFavRecordsCount()
             
         } else {
-            db.collection(name).getDocuments() { (querySnapshot, err) in
+            db.collection(name).getDocuments() { [self] (querySnapshot, err) in
                        if let err = err {
                            print("Error getting documents: \(err)")
                        } else {
                            self.dataCount = querySnapshot!.documents.count
                            print(self.dataCount)
+                           self.mainDataCount.text = "\(number) / \(dataCount)"
+                           //datacount
                        }
                    }
         }
