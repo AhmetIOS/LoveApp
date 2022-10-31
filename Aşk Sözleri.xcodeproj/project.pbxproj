@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B42325D028FEF09200E99FCB /* FavDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B42325CE28FEF09100E99FCB /* FavDataModel.xcdatamodeld */; };
 		B42E5E6628F99750001FCCFA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B42E5E6528F99750001FCCFA /* GoogleService-Info.plist */; };
 		B42E5E6928F99888001FCCFA /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = B42E5E6828F99888001FCCFA /* FirebaseAnalytics */; };
 		B42E5E6B28F99888001FCCFA /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = B42E5E6A28F99888001FCCFA /* FirebaseCrashlytics */; };
@@ -25,6 +26,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		102DA7BCC2EE6FE33339F3FF /* Pods_As_k_So_zleri.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_As_k_So_zleri.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		61BF343B925E17212B279B8F /* Pods-Aşk Sözleri.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aşk Sözleri.release.xcconfig"; path = "Target Support Files/Pods-Aşk Sözleri/Pods-Aşk Sözleri.release.xcconfig"; sourceTree = "<group>"; };
+		8311BCD963BF9DD243510AA8 /* Pods-Aşk Sözleri.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aşk Sözleri.debug.xcconfig"; path = "Target Support Files/Pods-Aşk Sözleri/Pods-Aşk Sözleri.debug.xcconfig"; sourceTree = "<group>"; };
+		B42325CF28FEF09200E99FCB /* FavDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavDataModel.xcdatamodel; sourceTree = "<group>"; };
 		B42E5E6528F99750001FCCFA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B4B6864028F919CD0073F35F /* Aşk Sözleri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Aşk Sözleri.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4B6864328F919CD0073F35F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +65,8 @@
 			children = (
 				B4B6864228F919CD0073F35F /* Aşk Sözleri */,
 				B4B6864128F919CD0073F35F /* Products */,
+				C30BE95CD03C9D790884D05E /* Pods */,
+				C08E397500C8A546079A83BD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,17 +82,36 @@
 			isa = PBXGroup;
 			children = (
 				B4B6864328F919CD0073F35F /* AppDelegate.swift */,
+				B42325CE28FEF09100E99FCB /* FavDataModel.xcdatamodeld */,
 				B4B6864528F919CD0073F35F /* SceneDelegate.swift */,
 				B4B6864728F919CD0073F35F /* ViewController.swift */,
+				B4B6865928F927FF0073F35F /* SecondViewController.swift */,
 				B4B6864928F919CD0073F35F /* Main.storyboard */,
 				B4B6864C28F919CF0073F35F /* Assets.xcassets */,
 				B4B6864E28F919CF0073F35F /* LaunchScreen.storyboard */,
 				B4B6865128F919CF0073F35F /* Info.plist */,
 				B42E5E6528F99750001FCCFA /* GoogleService-Info.plist */,
 				B4B6865728F91DF30073F35F /* MainTableViewCell.swift */,
-				B4B6865928F927FF0073F35F /* SecondViewController.swift */,
 			);
+			name = "Aşk Sözleri";
 			path = "Aşk Sözleri";
+			sourceTree = "<group>";
+		};
+		C08E397500C8A546079A83BD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				102DA7BCC2EE6FE33339F3FF /* Pods_As_k_So_zleri.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C30BE95CD03C9D790884D05E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8311BCD963BF9DD243510AA8 /* Pods-Aşk Sözleri.debug.xcconfig */,
+				61BF343B925E17212B279B8F /* Pods-Aşk Sözleri.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,9 +121,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B4B6865428F919CF0073F35F /* Build configuration list for PBXNativeTarget "Aşk Sözleri" */;
 			buildPhases = (
+				86F961C084F33D1C58D9E231 /* [CP] Check Pods Manifest.lock */,
 				B4B6863C28F919CD0073F35F /* Sources */,
 				B4B6863D28F919CD0073F35F /* Frameworks */,
 				B4B6863E28F919CD0073F35F /* Resources */,
+				BA527BAA5F79BE7C0084BD79 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -166,6 +194,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		86F961C084F33D1C58D9E231 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Aşk Sözleri-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA527BAA5F79BE7C0084BD79 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Aşk Sözleri/Pods-Aşk Sözleri-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Aşk Sözleri/Pods-Aşk Sözleri-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Aşk Sözleri/Pods-Aşk Sözleri-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B4B6863C28F919CD0073F35F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -174,6 +244,7 @@
 				B4B6864828F919CD0073F35F /* ViewController.swift in Sources */,
 				B4B6864428F919CD0073F35F /* AppDelegate.swift in Sources */,
 				B4B6865828F91DF30073F35F /* MainTableViewCell.swift in Sources */,
+				B42325D028FEF09200E99FCB /* FavDataModel.xcdatamodeld in Sources */,
 				B4B6865A28F928000073F35F /* SecondViewController.swift in Sources */,
 				B4B6864628F919CD0073F35F /* SceneDelegate.swift in Sources */,
 			);
@@ -317,6 +388,7 @@
 		};
 		B4B6865528F919CF0073F35F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8311BCD963BF9DD243510AA8 /* Pods-Aşk Sözleri.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -325,6 +397,7 @@
 				DEVELOPMENT_TEAM = 424LZCK57R;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Aşk Sözleri/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Loveapp;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -335,7 +408,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "allhediye.com.As-k-So-zleri";
+				PRODUCT_BUNDLE_IDENTIFIER = allhediye.com.loveapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -345,6 +418,7 @@
 		};
 		B4B6865628F919CF0073F35F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 61BF343B925E17212B279B8F /* Pods-Aşk Sözleri.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -353,6 +427,7 @@
 				DEVELOPMENT_TEAM = 424LZCK57R;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Aşk Sözleri/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Loveapp;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -363,7 +438,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "allhediye.com.As-k-So-zleri";
+				PRODUCT_BUNDLE_IDENTIFIER = allhediye.com.loveapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -437,6 +512,19 @@
 			productName = FirebaseFirestoreSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		B42325CE28FEF09100E99FCB /* FavDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B42325CF28FEF09200E99FCB /* FavDataModel.xcdatamodel */,
+			);
+			currentVersion = B42325CF28FEF09200E99FCB /* FavDataModel.xcdatamodel */;
+			path = FavDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B4B6863828F919CD0073F35F /* Project object */;
 }
