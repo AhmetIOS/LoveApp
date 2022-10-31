@@ -70,12 +70,12 @@ class SecondViewController: UIViewController, GADFullScreenContentDelegate {
         
         
         if title == "FAVORİLER" {
-            //query(name: title)
             dataNumber(name: title)
             if dataCount != 0 {
+                mainDataCount.text = "\(number) / \(dataCount)"
                 getAllItems(order: number)
             } else {
-                //isFaved(data: "FAVORİLER BOŞ!!")
+               
                 mainData.text = "FAVORİLERİZ BOŞ!! Lütfen beğendiğiniz sözleri ekranın sağ üstünde yer alan kalp işaretine basarak favorilerinize ekleyiniz!"
             }
             
@@ -177,49 +177,7 @@ class SecondViewController: UIViewController, GADFullScreenContentDelegate {
             
         }
     }
-    
-//    public func query(name: String) {
-//        print("favoriler")
-//        self.messages = []
-//        let words = ["AŞK SÖZLERİ", "TATLI SÖZLER","ACI SÖZLER"]
-//        for item in words {
-//            db.collection(item).whereField("isFav", isEqualTo: true)
-//                .getDocuments() { (querySnapshot, err) in
-//                    if let err = err {
-//                        print("Error getting documents: \(err)")
-//                    } else {
-//                        for document in querySnapshot!.documents {
-//                            let doc = document.data()
-//                            guard let data = doc["data"] as? String else {
-//                                return
-//                            }
-//                            guard let category = doc["category"] as? String else {
-//                                return
-//                            }
-//                            guard let idNumber = doc["id"] as? Int else {
-//                                return
-//                            }
-//                            //print(doc)
-//                            let newMessage = Message(data: data, isFav: true, category: category, id: idNumber)
-//                            //print(newMessage)
-//                            self.messages.append(newMessage)
-//                            self.dataCount = self.messages.count
-//                            DispatchQueue.main.async {
-//                                self.mainData.text = self.messages[self.number-1].data
-//
-//                                self.mainDataCount.text = "\(self.number) / \(self.dataCount)"
-//                                print(self.messages)
-//                            }
-//
-//
-//                        }
-//                    }
-//            }
-//        }
-//
-//
-//
-//    }
+
     
     private func shadowView(name: UIView) {
         

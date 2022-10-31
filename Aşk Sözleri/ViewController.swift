@@ -125,10 +125,7 @@ class ViewController: UIViewController, GADFullScreenContentDelegate {
                             style: .done,
                             target: self,
                             action: #selector(rateApp)),
-//            UIBarButtonItem(image: UIImage(systemName: "gearshape.2.fill"),
-//                            style: .done,
-//                            target: self,
-//                            action: nil)
+
         ]
     }
 
